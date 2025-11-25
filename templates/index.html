@@ -24,6 +24,31 @@
     </section>
 
 
+    <!-- Workout Logger Section -->
+    <section class="card workout-card">
+        <div class="card-header">
+            <h2><i class="fa-solid fa-person-running"></i> Log Workout</h2>
+            <span class="selected-date-label" id="selectedDateLabel">Today</span>
+        </div>
+        <form id="workoutForm">
+            <div class="form-group">
+                <label>Exercise</label>
+                <input type="text" id="exerciseName" placeholder="e.g. Bench Press" required>
+            </div>
+
+            <div id="setsContainer">
+                <!-- Dynamic Set Rows will go here -->
+            </div>
+
+            <button type="button" id="addSetBtn" class="btn-secondary"><i class="fa-solid fa-plus"></i> Add Set</button>
+            <button type="submit" class="btn-primary" style="margin-top: 1rem;">Log Workout</button>
+        </form>
+
+        <div class="workout-list" id="workoutList">
+            <!-- Workouts for selected date -->
+        </div>
+    </section>
+
     <!-- To-Do List Section -->
     <section class="card todo-card">
         <div class="card-header">
