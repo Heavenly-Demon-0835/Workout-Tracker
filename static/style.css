@@ -135,393 +135,174 @@ body {
 
 .card-header h2 {
     font-size: 1.25rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
 
-/* Calendar */
-.calendar-card {
-    grid-row: span 2;
-}
-
-.calendar-controls {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.calendar-controls button {
-    background: none;
-    border: none;
-    color: var(--text-secondary);
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.calendar-controls button:hover {
-    color: var(--text-primary);
-}
-
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 0.5rem;
-    margin-top: 1rem;
-}
-
-.calendar-day {
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    transition: all 0.2s;
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.02);
-}
-
-.calendar-day:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--text-primary);
-}
-
-.calendar-day.active {
-    background-color: var(--accent);
-    color: #fff;
-    font-weight: 600;
-    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
-}
-
-.calendar-day.has-data::after {
-    content: '';
-    position: absolute;
-    bottom: 4px;
-    width: 4px;
-    height: 4px;
-    background-color: var(--text-primary);
-    border-radius: 50%;
-}
-
-/* Forms & Inputs */
-.form-group {
-    margin-bottom: 1rem;
-}
-
-label {
-    display: block;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-    margin-bottom: 0.5rem;
-}
-
-input {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--border);
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    color: var(--text-primary);
-    font-family: var(--font-main);
-    transition: all 0.2s;
-}
-
-input:focus {
-    outline: none;
-    border-color: var(--accent);
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.1);
-}
-
-.btn-primary {
-    width: 100%;
-    background-color: var(--accent);
-    color: #fff;
-    border: none;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.btn-primary:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn-secondary {
-    width: 100%;
-    background-color: transparent;
-    color: var(--accent);
-    border: 1px dashed var(--accent);
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.btn-secondary:hover {
-    background-color: rgba(16, 185, 129, 0.1);
-}
-
-/* Dynamic Sets */
-.set-headers {
-    display: grid;
-    grid-template-columns: 60px 1fr 1fr 50px 30px;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-    padding: 0 0.5rem;
-}
-
-.set-headers span {
-    color: var(--text-secondary);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.set-row {
-    display: grid;
-    grid-template-columns: 60px 1fr 1fr 50px 30px;
-    gap: 0.5rem;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.03);
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    border: 1px solid transparent;
-}
-
-.set-row:hover {
-    border-color: rgba(255, 255, 255, 0.05);
-    background-color: rgba(255, 255, 255, 0.05);
-}
-
-.set-number {
-    color: var(--text-secondary);
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-.set-row input {
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-color: transparent;
-}
-
-.set-row input:focus {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-color: var(--accent);
-}
-
-.bw-toggle {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    cursor: pointer;
-    color: var(--text-secondary);
-    font-size: 0.75rem;
-    user-select: none;
-    justify-content: center;
-}
-
-.bw-toggle input {
-    width: auto;
-    margin: 0;
-}
-
-.remove-set-btn {
-    background: none;
-    border: none;
-    color: var(--text-secondary);
-    cursor: pointer;
-    padding: 0.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color 0.2s;
-}
-
-.remove-set-btn:hover {
-    color: var(--danger);
-}
-
-/* Lists */
-.workout-list,
-.todo-list {
-    margin-top: 1.5rem;
-    overflow-y: auto;
-    flex: 1;
-    padding-right: 0.5rem;
-}
-
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.workout-item,
-.todo-item {
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-bottom: 0.75rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid transparent;
-    transition: all 0.2s;
-}
-
-.workout-item:hover,
-.todo-item:hover {
-    border-color: var(--border);
-    background-color: rgba(0, 0, 0, 0.3);
-    transform: translateX(2px);
-}
-
-.workout-info h3 {
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
-    color: var(--text-primary);
-}
-
-.workout-stats {
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-}
-
-.delete-btn {
-    background: none;
-    border: none;
-    color: var(--text-secondary);
-    cursor: pointer;
-    opacity: 0;
-    transition: all 0.2s;
-    padding: 0.5rem;
-}
-
-.workout-item:hover .delete-btn,
-.todo-item:hover .delete-btn {
-    opacity: 1;
-}
-
-.delete-btn:hover {
-    color: var(--danger);
-    transform: scale(1.1);
-}
-
-/* To-Do Specific */
-.todo-input-group {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.todo-input-group input {
-    flex: 1;
-}
-
-.todo-input-group button {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border);
-    width: 42px;
-    border-radius: 0.5rem;
-    color: var(--text-primary);
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.todo-input-group button:hover {
-    background-color: var(--accent);
-    border-color: var(--accent);
-}
-
-.todo-item.completed span {
-    text-decoration: line-through;
-    color: var(--text-secondary);
-    opacity: 0.7;
-}
-
-.todo-check {
-    cursor: pointer;
-    margin-right: 0.75rem;
-    color: var(--accent);
-    font-size: 1.1rem;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .app-container {
-        flex-direction: column;
+    /* Lists */
+    .workout-list,
+    .todo-list {
+        margin-top: 1.5rem;
+        overflow-y: auto;
+        flex: 1;
+        padding-right: 0.5rem;
     }
 
-    .sidebar {
-        width: 100%;
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .workout-item,
+    .todo-item {
+        background-color: rgba(0, 0, 0, 0.2);
         padding: 1rem;
-        flex-direction: row;
+        border-radius: 0.5rem;
+        margin-bottom: 0.75rem;
+        display: flex;
         justify-content: space-between;
         align-items: center;
-        border-right: none;
-        border-bottom: 1px solid var(--border);
+        border: 1px solid transparent;
+        transition: all 0.2s;
     }
 
-    .logo {
-        margin-bottom: 0;
-        font-size: 1.25rem;
+    .workout-item:hover,
+    .todo-item:hover {
+        border-color: var(--border);
+        background-color: rgba(0, 0, 0, 0.3);
+        transform: translateX(2px);
     }
 
-    .nav-links li a span {
-        display: none;
+    .workout-info h3 {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+        color: var(--text-primary);
     }
 
-    .main-content {
-        padding: 1rem;
+    .workout-stats {
+        color: var(--text-secondary);
+        font-size: 0.85rem;
     }
 
-    .dashboard-grid {
+    .delete-btn {
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        cursor: pointer;
+        opacity: 0;
+        transition: all 0.2s;
+        padding: 0.5rem;
+    }
+
+    .workout-item:hover .delete-btn,
+    .todo-item:hover .delete-btn {
+        opacity: 1;
+    }
+
+    .delete-btn:hover {
+        color: var(--danger);
+        transform: scale(1.1);
+    }
+
+    /* To-Do Specific */
+    .todo-input-group {
         display: flex;
-        flex-direction: column;
-        height: auto;
-    }
-
-    .calendar-card {
-        order: 1;
-    }
-
-    .workout-card {
-        order: 2;
-    }
-
-    .todo-card {
-        order: 3;
-    }
-
-    .dashboard-header {
-        flex-direction: column;
-        align-items: flex-start;
         gap: 0.5rem;
+        margin-bottom: 1rem;
     }
-}
+
+    .todo-input-group input {
+        flex: 1;
+    }
+
+    .todo-input-group button {
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border);
+        width: 42px;
+        border-radius: 0.5rem;
+        color: var(--text-primary);
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .todo-input-group button:hover {
+        background-color: var(--accent);
+        border-color: var(--accent);
+    }
+
+    .todo-item.completed span {
+        text-decoration: line-through;
+        color: var(--text-secondary);
+        opacity: 0.7;
+    }
+
+    .todo-check {
+        cursor: pointer;
+        margin-right: 0.75rem;
+        color: var(--accent);
+        font-size: 1.1rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .app-container {
+            flex-direction: column;
+        }
+
+        .sidebar {
+            width: 100%;
+            padding: 1rem;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-right: none;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            margin-bottom: 0;
+            font-size: 1.25rem;
+        }
+
+        .nav-links li a span {
+            display: none;
+        }
+
+        .main-content {
+            padding: 1rem;
+        }
+
+        .dashboard-grid {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+        }
+
+        .calendar-card {
+            order: 1;
+        }
+
+        .workout-card {
+            order: 2;
+        }
+
+        .todo-card {
+            order: 3;
+        }
+
+        .dashboard-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+    }
